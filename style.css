@@ -1,0 +1,68 @@
+/* F4kFiles - The Most Sketchy Yet Functional File Converter 💀 */
+
+body {
+    background: black;
+    color: #00ff00; /* Because neon green on black screams "virus" */
+    font-family: "Comic Sans MS", "Papyrus", cursive; /* PURE PAIN */
+    text-align: center;
+}
+
+header {
+    background: red;
+    padding: 20px;
+    box-shadow: 0px 0px 20px cyan;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px white;
+}
+
+.upload-box {
+    background: rgba(255, 0, 0, 0.8); /* Blood red because WHY NOT */
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    border: 5px dashed #ffff00; /* Yellow dashed border? You already know this site is legit 💀 */
+    box-shadow: 0px 0px 50px purple;
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { transform: translateX(-2px) skewX(-10deg); }
+    100% { transform: translateX(2px) skewX(10deg); }
+}
+
+input, select, button {
+    background: black;
+    color: cyan;
+    font-size: 18px;
+    border: 2px solid magenta;
+    padding: 10px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: cyan;
+    color: black;
+    text-shadow: 2px 2px 5px white;
+}
+
+#statusMsg {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px red;
+}
+
+footer {
+    margin-top: 50px;
+    background: black;
+    padding: 10px;
+    border-top: 2px solid red;
+    color: white;
+    text-shadow: 2px 2px 5px cyan;
+}
