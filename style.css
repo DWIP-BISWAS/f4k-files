@@ -1,77 +1,103 @@
-/* F4kFiles - The Most Cursed File Converter on the Internet 💀 */
+/* F4kFiles - The File Converter That Looks Straight-Up Illegal 💀 */
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap');
 
 body {
-    background: #0a0a0a; /* Dark as your soul */
-    color: #ff0000; /* BLOOD */
-    font-family: 'VT323', monospace; /* Old-school hacker terminal font */
+    background: #060606; /* Darker than your internet history */
+    color: #b30000; /* Blood red */
+    font-family: 'IBM Plex Mono', monospace; /* Looks like a government document */
     text-align: center;
-    text-shadow: 2px 2px 5px black;
-    overflow: hidden;
+    padding: 30px;
 }
 
-/* HEADER */
+/* WARNING-STYLE HEADER */
 header {
     background: black;
-    padding: 20px;
-    box-shadow: 0px 0px 30px red;
-    border-bottom: 5px solid red;
+    padding: 25px;
+    border-bottom: 3px solid red;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 h1 {
-    font-size: 60px;
-    text-transform: uppercase;
-    text-shadow: 5px 5px 15px red;
-    animation: textFlicker 2s infinite alternate;
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+    text-shadow: 0 0 20px red;
 }
 
-/* SKETCHY UPLOAD BOX */
+/* MAIN CONTENT */
 .upload-box {
-    background: rgba(20, 0, 0, 0.9); /* Looks like dried blood */
-    padding: 20px;
+    background: #101010; /* Dark gray, almost black */
+    padding: 30px;
     margin: 50px auto;
-    width: 70%;
-    border: 5px double red;
-    box-shadow: 0px 0px 50px red;
-    animation: glitch 0.8s infinite alternate;
+    width: 80%;
+    border: 2px solid red;
+    box-shadow: 0px 0px 20px black;
 }
 
-@keyframes glitch {
-    0% { transform: skewX(-5deg) translateX(-2px); }
-    100% { transform: skewX(5deg) translateX(2px); }
+h2 {
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
-/* INPUTS & BUTTONS */
+/* FORM INPUTS & BUTTONS */
 input, select, button {
     background: black;
-    color: #ff0000;
-    font-size: 20px;
-    border: 3px solid red;
-    padding: 15px;
+    color: red;
+    font-size: 18px;
+    border: 2px solid red;
+    padding: 12px;
     margin: 10px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0px 0px 10px red;
-    transition: all 0.3s ease-in-out;
+    width: 80%;
+}
+
+button {
+    background: red;
+    color: black;
+    font-weight: bold;
+    border: 3px solid black;
 }
 
 button:hover {
-    background: red;
-    color: black;
-    text-shadow: 2px 2px 5px black;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 20px red;
+    background: #b30000;
+    color: white;
+    border: 2px solid white;
 }
 
-/* ERROR MESSAGE TEXT */
+/* ERROR & STATUS MESSAGE */
 #statusMsg {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
-    text-shadow: 2px 2px 10px red;
     color: red;
+    padding: 10px;
 }
+
+/* FOOTER (NO COMFORT, JUST FACTS) */
+footer {
+    margin-top: 50px;
+    background: black;
+    padding: 15px;
+    border-top: 2px solid red;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+footer a {
+    color: red;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 
 /* CURSOR EFFECT */
 .cursor-trail {
@@ -89,34 +115,3 @@ button:hover {
     to { opacity: 0; }
 }
 
-/* FOOTER */
-footer {
-    margin-top: 50px;
-    background: black;
-    padding: 15px;
-    border-top: 3px solid red;
-    color: white;
-    text-shadow: 2px 2px 5px red;
-}
-
-/* TEXT FLICKER ANIMATION */
-@keyframes textFlicker {
-    0% { opacity: 1; }
-    50% { opacity: 0.1; }
-    100% { opacity: 1; }
-}
-
-/* VHS GLITCH EFFECT */
-@keyframes vhsGlitch {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-2px); }
-    40% { transform: translateX(2px); }
-    60% { transform: translateX(-1px); }
-    80% { transform: translateX(1px); }
-    100% { transform: translateX(0); }
-}
-
-/* APPLY GLITCH TO EVERYTHING */
-* {
-    animation: vhsGlitch 0.3s infinite;
-}
