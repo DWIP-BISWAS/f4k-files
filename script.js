@@ -22,46 +22,42 @@ async function convertFile() {
 
     let file = fileInput.files[0];
     let targetFormat = formatSelect.value;
-
-    // Create FormData
-    let formData = new FormData();
-    formData.append("file", file);
-    formData.append("target", targetFormat);
+    let apiKey = "AGQfwba0hRTmcdN9qqan1z";  // Your Filestack API key
 
     statusMsg.innerHTML = `🚀 Uploading ${file.name}... Converting to ${targetFormat}...`;
     statusMsg.style.color = "yellow";
 
+    // Create FormData for uploading
+    let formData = new FormData();
+    formData.append("fileUpload", file);
+
     try {
-        let response = await fetch("https://v2.convertapi.com/convert/" + targetFormat, {
+        // Step 1: Upload file to Filestack
+        let uploadResponse = await fetch(`https://www.filestackapi.com/api/store/S3?key=${apiKey}`, {
             method: "POST",
-            headers: {
-                "Authorization": "Bearer secret_ImtBAGDSu8z2y1sl",  // Replace with your actual key
-            },
-            body: formData,
+            body: formData
         });
 
-        // **DEBUGGING: Print response before parsing**
-        let textResponse = await response.text();
-        console.log("RAW RESPONSE:", textResponse);
-
-        let jsonResponse = JSON.parse(textResponse);
-
-        // Check if conversion was successful
-        if (!jsonResponse || !jsonResponse.file) {
-            throw new Error("Conversion failed! Invalid API response.");
+        let uploadData = await uploadResponse.json();
+        if (!uploadData || !uploadData.url) {
+            throw new Error("File upload failed!");
         }
 
-        let downloadUrl = jsonResponse.file.url;
+        let fileUrl = uploadData.url;
+        console.log("Uploaded File URL:", fileUrl);
 
-        statusMsg.innerHTML = `✅ Conversion successful! <a href="${downloadUrl}" download>Download File</a>`;
+        // Step 2: Convert the uploaded file
+        let conversionUrl = `https://process.filestackapi.com/${apiKey}/output=format:${targetFormat}/${fileUrl}`;
+
+        statusMsg.innerHTML = `✅ Conversion successful! <a href="${conversionUrl}" download>Download File</a>`;
         statusMsg.style.color = "lime";
+
     } catch (error) {
-        console.error("❌ ERROR:", error);
+        console.error("Conversion Error:", error);
         statusMsg.innerHTML = `❌ Error: ${error.message}`;
         statusMsg.style.color = "red";
     }
 }
-
 // Glitch effect for the page title
 setInterval(() => {
     let originalTitle = "F4kFiles - Totally Legit File Converter";
